@@ -333,7 +333,7 @@ function loadTransition() {
 document.querySelector(".controlIcon").addEventListener("click", playPause);
 document.addEventListener("DOMContentLoaded", () => {
     fetchSongs();
-    playPause();
+    // playPause();
     loadTransition()
 });
 
