@@ -1,0 +1,27 @@
+[
+    {
+        "id": 0,
+        "genre": "Gospel",
+        "image": "./songImages/MercyChinwo.jpeg"
+    },
+    {
+        "id": 1,
+        "genre": "Afro",
+        "image": "./songImages/tems.jpeg"
+    },
+    {
+        "id": 0,
+        "genre": "Pop",
+        "image": "./songImages/edSheeran.jpeg"
+    },
+    {
+        "id": 0,
+        "genre": "R&B",
+        "image": "./songImages/beyonce.jpeg"
+    },
+    {
+        "id": 0,
+        "genre": "Country",
+        "image": "./songImages/dollyParton.jpeg"
+    }
+]
