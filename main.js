@@ -90,6 +90,7 @@ function selectSong(e, item) {
     song.load();
     songSource.src = `${item.url}`;
     songSource.id = item.id;
+    index = Number(songSource.id)
     console.log(songSource.id, songSource, "source dets");
     songPlay();
 }
@@ -141,19 +142,7 @@ song.addEventListener("ended", () => {
         console.log(songSource.id, "id at ended shuffled");
         // highlightSong(e);
     } else {
-        if (index < songs.length) {
-            song.load();
-            console.log(index, "index");
-            index = index + 1;
-            songSource.src = `${songs[index].url}`;
-            songPlay();
-            songTitle.innerHTML = "";
-            songTitle.innerHTML = songs[index].title;
-            songImage.src = `${songs[index].image}`;
-            songSource.id = songs[index].id;
-            console.log(songSource.id, "songId");
-            console.log(index, "after plus 1");
-        } else if (index >= songs.length) {
+        if (index >= songs.length || index === 0) {
             index = 0;
             song.load();
             console.log(index, "index");
@@ -163,6 +152,19 @@ song.addEventListener("ended", () => {
             songTitle.innerHTML = songs[index].title;
             songImage.src = `${songs[index].image}`;
             songSource.id = songs[index].id;
+        } else if (index < songs.length) {
+            song.load();
+            console.log(index, "index");
+            index = index + 1;
+            console.log(index, "after plus 1");
+            songSource.src = `${songs[index].url}`;
+            songPlay();
+            songTitle.innerHTML = "";
+            songTitle.innerHTML = songs[index].title;
+            songImage.src = `${songs[index].image}`;
+            songSource.id = songs[index].id;
+            console.log(songSource.id, "songId");
+            console.log(index, "after plus 1");
         }
     }
 });
@@ -290,6 +292,7 @@ searchBtn.addEventListener("click", () => {
         songTitle.innerHTML = `${foundSong.title}`;
         songImage.src = `${foundSong.image}`;
         songSource.id = foundSong.id;
+        index = Number(songSource.id)
         if (ctrlIcon.classList.contains("fa-play")) {
             ctrlIcon.classList.remove("fa-play");
             ctrlIcon.classList.add("fa-pause");
