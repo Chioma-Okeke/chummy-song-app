@@ -142,7 +142,7 @@ song.addEventListener("ended", () => {
         console.log(songSource.id, "id at ended shuffled");
         // highlightSong(e);
     } else {
-        if (index >= songs.length || index === 0) {
+        if (index >= songs.length) {
             index = 0;
             song.load();
             console.log(index, "index");
